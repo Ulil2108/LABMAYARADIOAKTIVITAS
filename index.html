@@ -7207,6 +7207,24 @@ body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:10.5pt;c
         // diimplementasikan karena browser modern memblokir AudioContext sebelum
         // ada interaksi user (klik/tap), jadi efeknya tidak akan reliable terdengar.
 
+        /* ============================================================
+           FIXED CANVAS RESCALE
+           ============================================================ */
+        function rescaleStage() {
+          var stage = document.getElementById('stage');
+          var scaleX = window.innerWidth / 1280;
+          var scaleY = window.innerHeight / 720;
+          var scale = Math.min(scaleX, scaleY);
+          stage.style.transform = 'scale(' + scale + ')';
+
+          var offsetX = (window.innerWidth - 1280 * scale) / 2;
+          var offsetY = (window.innerHeight - 720 * scale) / 2;
+          stage.style.left = Math.max(0, offsetX) + 'px';
+          stage.style.top = Math.max(0, offsetY) + 'px';
+        }
+        rescaleStage();
+        window.addEventListener('resize', rescaleStage);
+
         (function initSplash() {
           const splash = document.getElementById('splashScreen');
           const bar = document.getElementById('splashLoadingBar');
@@ -7332,22 +7350,8 @@ body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:10.5pt;c
         }
 
         /* ============================================================
-           FIXED CANVAS RESCALE
+           NAVIGASI MENU ATAS & PENYESUAIAN UKURAN STAGE/MENU-FRAME — RESCALE sudah di atas
            ============================================================ */
-        function rescaleStage() {
-          var stage = document.getElementById('stage');
-          var scaleX = window.innerWidth / 1280;
-          var scaleY = window.innerHeight / 720;
-          var scale = Math.min(scaleX, scaleY);
-          stage.style.transform = 'scale(' + scale + ')';
-
-          var offsetX = (window.innerWidth - 1280 * scale) / 2;
-          var offsetY = (window.innerHeight - 720 * scale) / 2;
-          stage.style.left = offsetX + 'px';
-          stage.style.top = offsetY + 'px';
-        }
-        rescaleStage();
-        window.addEventListener('resize', rescaleStage);
       </script>
     </div>
   </div>
