@@ -35,9 +35,6 @@
       position: fixed;
       inset: 0;
       overflow: hidden;
-      width: 100vw;
-      height: 100vh;
-      height: 100dvh;
     }
 
     #stage {
@@ -7244,7 +7241,7 @@ body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:10.5pt;c
               bgm.play().catch(e => console.log('BGM Autoplay prevented: ', e));
             }
             switchView('teori');
-            setTimeout(() => { splash.remove(); fitAllFrames(); }, 650);
+            setTimeout(() => { splash.remove(); rescaleStage(); }, 650);
           });
         })();
         /* ============================================================
@@ -7339,18 +7336,15 @@ body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:10.5pt;c
            ============================================================ */
         function rescaleStage() {
           var stage = document.getElementById('stage');
-          var vw = window.innerWidth;
-          var vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-          var scaleX = vw / 1280;
-          var scaleY = vh / 720;
+          var scaleX = window.innerWidth / 1280;
+          var scaleY = window.innerHeight / 720;
           var scale = Math.min(scaleX, scaleY);
           stage.style.transform = 'scale(' + scale + ')';
-          stage.style.transformOrigin = 'top left';
 
-          var offsetX = (vw - 1280 * scale) / 2;
-          var offsetY = (vh - 720 * scale) / 2;
-          stage.style.left = Math.max(0, offsetX) + 'px';
-          stage.style.top = Math.max(0, offsetY) + 'px';
+          var offsetX = (window.innerWidth - 1280 * scale) / 2;
+          var offsetY = (window.innerHeight - 720 * scale) / 2;
+          stage.style.left = offsetX + 'px';
+          stage.style.top = offsetY + 'px';
         }
         rescaleStage();
         window.addEventListener('resize', rescaleStage);
