@@ -46,6 +46,7 @@
       transform-origin: top left;
       overflow: hidden;
       background: var(--bg-0);
+      font-family: Arial, Helvetica, sans-serif !important;
       font-size: 16px !important;
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
@@ -59,7 +60,7 @@
       height: 100%;
       overflow: hidden;
       background: #060f1a;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif !important;
       color: var(--ink);
       touch-action: manipulation;
     }
@@ -377,6 +378,7 @@
       grid-template-columns: 1fr 1fr;
       gap: .4em;
       margin-top: auto;
+      flex-shrink: 0;
     }
 
     .btn {
@@ -1037,6 +1039,7 @@
       align-items: center;
       gap: 0.5em;
     }
+
     .vol-btn {
       background: none;
       border: none;
@@ -1050,9 +1053,11 @@
       height: 32px;
       padding: 0;
     }
+
     .vol-btn:hover {
       color: #fff;
     }
+
     .vol-slider {
       width: 80px;
       cursor: pointer;
@@ -3501,10 +3506,12 @@
                                   stabil</span></div>
                               <div
                                 style="flex:1; display:flex; gap:6px; align-items:flex-start; justify-content:center; border-left:1px solid rgba(255,255,255,0.1); border-right:1px solid rgba(255,255,255,0.1); padding:0 8px;">
-                                <span style="color:var(--green);">&#10003;</span> <span>Terjadi spontan</span></div>
+                                <span style="color:var(--green);">&#10003;</span> <span>Terjadi spontan</span>
+                              </div>
                               <div style="flex:1; display:flex; gap:6px; align-items:flex-start; padding-left:4px;">
                                 <span style="color:var(--green);">&#10003;</span> <span>Tidak dipengaruhi kondisi
-                                  kimia</span></div>
+                                  kimia</span>
+                              </div>
                             </div>
                           </div>
                           <div class="t-quiz"
@@ -3791,8 +3798,10 @@
 
                         <!-- KOLOM KANAN -->
                         <div class="t-col-kanan">
-                          <div class="t-placeholder-hud" style="height:100%; padding:0; background:transparent; border:none; box-shadow:none;">
-                            <svg viewBox="0 0 480 820" width="100%" height="100%" style="font-family: sans-serif; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
+                          <div class="t-placeholder-hud"
+                            style="height:100%; padding:0; background:transparent; border:none; box-shadow:none;">
+                            <svg viewBox="0 0 480 820" width="100%" height="100%"
+                              style="font-family: sans-serif; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
                               <defs>
                                 <linearGradient id="gradMassa" x1="0" y1="0" x2="0" y2="1">
                                   <stop offset="0%" stop-color="#ffcc00" stop-opacity="0.8" />
@@ -3805,21 +3814,33 @@
                               </defs>
 
                               <!-- Fills -->
-                              <polygon points="60,200 85,280 110,346.5 135,403 160,450 185,490 210,523.5 235,551.5 260,575 285,595 310,611.6 335,625.7 360,637.5 360,700 60,700" fill="url(#gradMassa)" />
-                              <polygon points="60,575 85,595 110,611.6 135,625.7 160,637.5 185,647.5 210,655.8 235,662.9 260,668.75 285,673.75 310,677.9 335,681.4 360,684.4 360,700 60,700" fill="url(#gradAktivitas)" />
+                              <polygon
+                                points="60,200 85,280 110,346.5 135,403 160,450 185,490 210,523.5 235,551.5 260,575 285,595 310,611.6 335,625.7 360,637.5 360,700 60,700"
+                                fill="url(#gradMassa)" />
+                              <polygon
+                                points="60,575 85,595 110,611.6 135,625.7 160,637.5 185,647.5 210,655.8 235,662.9 260,668.75 285,673.75 310,677.9 335,681.4 360,684.4 360,700 60,700"
+                                fill="url(#gradAktivitas)" />
 
                               <!-- Dashed Guides -->
-                              <polyline points="60,450 160,450 160,700" stroke="white" stroke-width="2" stroke-dasharray="6,4" fill="none" opacity="0.8" />
-                              <polyline points="360,637.5 360,700" stroke="white" stroke-width="2" stroke-dasharray="6,4" fill="none" opacity="0.8" />
+                              <polyline points="60,450 160,450 160,700" stroke="white" stroke-width="2"
+                                stroke-dasharray="6,4" fill="none" opacity="0.8" />
+                              <polyline points="360,637.5 360,700" stroke="white" stroke-width="2"
+                                stroke-dasharray="6,4" fill="none" opacity="0.8" />
 
                               <!-- Curves -->
-                              <polyline points="60,200 85,280 110,346.5 135,403 160,450 185,490 210,523.5 235,551.5 260,575 285,595 310,611.6 335,625.7 360,637.5" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-                              <polyline points="60,575 85,595 110,611.6 135,625.7 160,637.5 185,647.5 210,655.8 235,662.9 260,668.75 285,673.75 310,677.9 335,681.4 360,684.4" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                              <polyline
+                                points="60,200 85,280 110,346.5 135,403 160,450 185,490 210,523.5 235,551.5 260,575 285,595 310,611.6 335,625.7 360,637.5"
+                                stroke="white" stroke-width="4" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                              <polyline
+                                points="60,575 85,595 110,611.6 135,625.7 160,637.5 185,647.5 210,655.8 235,662.9 260,668.75 285,673.75 310,677.9 335,681.4 360,684.4"
+                                stroke="white" stroke-width="4" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round" />
 
                               <!-- Axes -->
                               <line x1="60" y1="700" x2="60" y2="150" stroke="white" stroke-width="3" />
                               <polygon points="55,160 65,160 60,140" fill="white" />
-                              
+
                               <line x1="400" y1="700" x2="400" y2="150" stroke="white" stroke-width="3" />
                               <polygon points="395,160 405,160 400,140" fill="white" />
 
@@ -3839,32 +3860,56 @@
                               <line x1="360" y1="695" x2="360" y2="705" stroke="white" stroke-width="3" />
 
                               <!-- Text: Left Axis -->
-                              <text x="45" y="700" fill="white" font-size="22" font-weight="bold" text-anchor="end" alignment-baseline="middle">0</text>
-                              <text x="45" y="575" fill="white" font-size="22" font-weight="bold" text-anchor="end" alignment-baseline="middle">0.25</text>
-                              <text x="45" y="450" fill="white" font-size="22" font-weight="bold" text-anchor="end" alignment-baseline="middle">0.5</text>
-                              <text x="45" y="200" fill="white" font-size="22" font-weight="bold" text-anchor="end" alignment-baseline="middle">1.0</text>
-                              <text x="60" y="100" fill="white" font-size="20" font-weight="bold" text-anchor="middle">Massa M</text>
-                              <text x="60" y="125" fill="white" font-size="14" font-weight="bold" text-anchor="middle">(relatif terhadap M<tspan baseline-shift="sub" font-size="0.7em">0</tspan>)</text>
+                              <text x="45" y="700" fill="white" font-size="22" font-weight="bold" text-anchor="end"
+                                alignment-baseline="middle">0</text>
+                              <text x="45" y="575" fill="white" font-size="22" font-weight="bold" text-anchor="end"
+                                alignment-baseline="middle">0.25</text>
+                              <text x="45" y="450" fill="white" font-size="22" font-weight="bold" text-anchor="end"
+                                alignment-baseline="middle">0.5</text>
+                              <text x="45" y="200" fill="white" font-size="22" font-weight="bold" text-anchor="end"
+                                alignment-baseline="middle">1.0</text>
+                              <text x="60" y="100" fill="white" font-size="20" font-weight="bold"
+                                text-anchor="middle">Massa M</text>
+                              <text x="60" y="125" fill="white" font-size="14" font-weight="bold"
+                                text-anchor="middle">(relatif terhadap M<tspan baseline-shift="sub" font-size="0.7em">0
+                                </tspan>)</text>
 
                               <!-- Text: Right Axis -->
-                              <text x="415" y="700" fill="white" font-size="22" font-weight="bold" text-anchor="start" alignment-baseline="middle">0</text>
-                              <text x="415" y="450" fill="white" font-size="22" font-weight="bold" text-anchor="start" alignment-baseline="middle">0.5</text>
-                              <text x="415" y="200" fill="white" font-size="22" font-weight="bold" text-anchor="start" alignment-baseline="middle">1</text>
-                              <text x="400" y="115" fill="white" font-size="20" font-weight="bold" text-anchor="middle">Aktivitas</text>
-                              <text x="400" y="140" fill="white" font-size="14" font-weight="bold" text-anchor="middle">(relatif terhadap A<tspan baseline-shift="sub" font-size="0.7em">0</tspan>)</text>
+                              <text x="415" y="700" fill="white" font-size="22" font-weight="bold" text-anchor="start"
+                                alignment-baseline="middle">0</text>
+                              <text x="415" y="450" fill="white" font-size="22" font-weight="bold" text-anchor="start"
+                                alignment-baseline="middle">0.5</text>
+                              <text x="415" y="200" fill="white" font-size="22" font-weight="bold" text-anchor="start"
+                                alignment-baseline="middle">1</text>
+                              <text x="400" y="115" fill="white" font-size="20" font-weight="bold"
+                                text-anchor="middle">Aktivitas</text>
+                              <text x="400" y="140" fill="white" font-size="14" font-weight="bold"
+                                text-anchor="middle">(relatif terhadap A<tspan baseline-shift="sub" font-size="0.7em">0
+                                </tspan>)</text>
 
                               <!-- Text: X Axis -->
-                              <text x="60" y="740" fill="white" font-size="22" font-weight="bold" text-anchor="middle">0</text>
-                              <text x="160" y="740" fill="white" font-size="22" font-weight="bold" text-anchor="middle">1 t<tspan baseline-shift="sub" font-size="0.7em">1/2</tspan></text>
-                              <text x="260" y="740" fill="white" font-size="22" font-weight="bold" text-anchor="middle">2 t<tspan baseline-shift="sub" font-size="0.7em">1/2</tspan></text>
-                              <text x="360" y="740" fill="white" font-size="22" font-weight="bold" text-anchor="middle">3 t<tspan baseline-shift="sub" font-size="0.7em">1/2</tspan></text>
-                              <text x="240" y="790" fill="white" font-size="22" font-weight="bold" text-anchor="middle">Waktu (jumlah waktu paruh t<tspan baseline-shift="sub" font-size="0.7em">1/2</tspan>)</text>
+                              <text x="60" y="740" fill="white" font-size="22" font-weight="bold"
+                                text-anchor="middle">0</text>
+                              <text x="160" y="740" fill="white" font-size="22" font-weight="bold"
+                                text-anchor="middle">1 t<tspan baseline-shift="sub" font-size="0.7em">1/2</tspan></text>
+                              <text x="260" y="740" fill="white" font-size="22" font-weight="bold"
+                                text-anchor="middle">2 t<tspan baseline-shift="sub" font-size="0.7em">1/2</tspan></text>
+                              <text x="360" y="740" fill="white" font-size="22" font-weight="bold"
+                                text-anchor="middle">3 t<tspan baseline-shift="sub" font-size="0.7em">1/2</tspan></text>
+                              <text x="240" y="790" fill="white" font-size="22" font-weight="bold"
+                                text-anchor="middle">Waktu (jumlah waktu paruh t<tspan baseline-shift="sub"
+                                  font-size="0.7em">1/2</tspan>)</text>
 
                               <!-- Formulas -->
-                              <text x="230" y="240" fill="white" font-size="24" font-weight="bold" text-anchor="middle">Massa (t) — M(t)</text>
-                              <text x="230" y="300" fill="white" font-size="26" font-weight="bold" text-anchor="middle">M(t) = M<tspan baseline-shift="sub" font-size="0.7em">0</tspan> (½)<tspan baseline-shift="super" font-size="0.7em">t</tspan></text>
+                              <text x="230" y="240" fill="white" font-size="24" font-weight="bold"
+                                text-anchor="middle">Massa (t) — M(t)</text>
+                              <text x="230" y="300" fill="white" font-size="26" font-weight="bold"
+                                text-anchor="middle">M(t) = M<tspan baseline-shift="sub" font-size="0.7em">0</tspan> (½)
+                                <tspan baseline-shift="super" font-size="0.7em">t</tspan></text>
 
-                              <text x="230" y="630" fill="white" font-size="26" font-weight="bold" text-anchor="middle">A(t) = A<tspan baseline-shift="sub" font-size="0.7em">0</tspan> (½)<tspan baseline-shift="super" font-size="0.7em">t</tspan></text>
+                              <text x="230" y="630" fill="white" font-size="26" font-weight="bold"
+                                text-anchor="middle">A(t) = A<tspan baseline-shift="sub" font-size="0.7em">0</tspan> (½)
+                                <tspan baseline-shift="super" font-size="0.7em">t</tspan></text>
                             </svg>
                           </div>
                         </div>
@@ -3934,7 +3979,8 @@
                                 onclick="answerQuiz(this, false, 'Aluminium tertembus oleh Gamma.')">Aluminium</button>
                               <button class="t-quiz-btn" style="flex:1; padding:6px; font-size:11px;"
                                 data-correct="true"
-                                onclick="answerQuiz(this, true, 'Timbal dapat menghentikan Gamma, Beta, dan Alpha.')">Timbal (Pb)</button>
+                                onclick="answerQuiz(this, true, 'Timbal dapat menghentikan Gamma, Beta, dan Alpha.')">Timbal
+                                (Pb)</button>
                             </div>
                             <div class="t-quiz-feedback" style="font-size:11px; padding:0; margin-top:2px;"></div>
                           </div>
@@ -3942,21 +3988,34 @@
 
                         <!-- KOLOM KANAN -->
                         <div class="t-col-kanan">
-                          <div class="t-placeholder-hud" style="height:100%; padding:0; background:rgba(0,0,0,0.2); border:1px solid rgba(63,214,255,0.2); border-radius:12px; display:flex; flex-direction:column; overflow:hidden;">
+                          <div class="t-placeholder-hud"
+                            style="height:100%; padding:0; background:rgba(0,0,0,0.2); border:1px solid rgba(63,214,255,0.2); border-radius:12px; display:flex; flex-direction:column; overflow:hidden;">
                             <!-- Header -->
-                            <div style="display:grid; grid-template-columns: 1.2fr 2.5fr; border-bottom:1px solid rgba(63,214,255,0.2); padding:1em 0; text-align:center; align-items:center;">
-                              <div style="color:var(--cyan); font-weight:bold; font-size:14px; letter-spacing:1px; text-transform:uppercase;">Jenis Radiasi</div>
-                              <div style="color:#fff; font-weight:bold; font-size:14px; letter-spacing:1px; text-transform:uppercase;">Ilustrasi</div>
+                            <div
+                              style="display:grid; grid-template-columns: 1.2fr 2.5fr; border-bottom:1px solid rgba(63,214,255,0.2); padding:1em 0; text-align:center; align-items:center;">
+                              <div
+                                style="color:var(--cyan); font-weight:bold; font-size:14px; letter-spacing:1px; text-transform:uppercase;">
+                                Jenis Radiasi</div>
+                              <div
+                                style="color:#fff; font-weight:bold; font-size:14px; letter-spacing:1px; text-transform:uppercase;">
+                                Ilustrasi</div>
                             </div>
-                            
+
                             <!-- Row 1: Alpha -->
-                            <div style="display:grid; grid-template-columns: 1.2fr 2.5fr; border-bottom:1px solid rgba(255,255,255,0.1); flex:1; align-items:center; text-align:center;">
-                              <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                                <div style="font-size:72px; font-family:'Times New Roman', Times, serif; text-transform:none; color:#fff; font-style:italic; line-height:0.8; text-shadow: 0 0 15px rgba(63,214,255,0.8);">&alpha;</div>
-                                <div style="font-size:14px; color:#fff; margin-top:12px; font-weight:bold; letter-spacing:2px; text-transform:none;">(alpha)</div>
+                            <div
+                              style="display:grid; grid-template-columns: 1.2fr 2.5fr; border-bottom:1px solid rgba(255,255,255,0.1); flex:1; align-items:center; text-align:center;">
+                              <div
+                                style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <div
+                                  style="font-size:72px; font-family:'Times New Roman', Times, serif; text-transform:none; color:#fff; font-style:italic; line-height:0.8; text-shadow: 0 0 15px rgba(63,214,255,0.8);">
+                                  &alpha;</div>
+                                <div
+                                  style="font-size:14px; color:#fff; margin-top:12px; font-weight:bold; letter-spacing:2px; text-transform:none;">
+                                  (alpha)</div>
                               </div>
                               <div style="height:100%; width:100%; position:relative;">
-                                <svg viewBox="15 -20 235 120" width="100%" height="100%" style="position:absolute; top:0; left:0;">
+                                <svg viewBox="15 -20 235 120" width="100%" height="100%"
+                                  style="position:absolute; top:0; left:0;">
                                   <g transform="translate(30,50)">
                                     <circle cx="-6" cy="-4" r="5" fill="#ff5252" />
                                     <circle cx="0" cy="-7" r="5" fill="#3b82f6" />
@@ -3966,77 +4025,107 @@
                                     <circle cx="7" cy="3" r="5" fill="#3b82f6" />
                                     <circle cx="0" cy="0" r="5" fill="#ff5252" />
                                   </g>
-                                  <line x1="50" y1="50" x2="145" y2="50" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed)" />
+                                  <line x1="50" y1="50" x2="145" y2="50" stroke="#ef4444" stroke-width="2"
+                                    marker-end="url(#arrowRed)" />
                                   <!-- Barrier Taller & Shifted Down -->
                                   <polygon points="165,105 165,25 175,15 175,95" fill="#cbd5e1" stroke="#94a3b8" />
-                                  <text x="170" y="0" fill="#ffffff" font-size="22" font-weight="bold" text-anchor="middle" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">KERTAS</text>
-                                  <line x1="170" y1="50" x2="225" y2="50" stroke="#3b82f6" stroke-width="1.5" opacity="0.6" />
+                                  <text x="170" y="0" fill="#ffffff" font-size="22" font-weight="bold"
+                                    text-anchor="middle" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">KERTAS</text>
+                                  <line x1="170" y1="50" x2="225" y2="50" stroke="#3b82f6" stroke-width="1.5"
+                                    opacity="0.6" />
                                   <g transform="translate(240,50)">
                                     <circle cx="0" cy="0" r="9" fill="#ef4444" />
-                                    <path d="M -4 -4 L 4 4 M -4 4 L 4 -4" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+                                    <path d="M -4 -4 L 4 4 M -4 4 L 4 -4" stroke="#1e293b" stroke-width="3"
+                                      stroke-linecap="round" />
                                   </g>
                                 </svg>
                               </div>
                             </div>
 
                             <!-- Row 2: Beta -->
-                            <div style="display:grid; grid-template-columns: 1.2fr 2.5fr; border-bottom:1px solid rgba(255,255,255,0.1); flex:1; align-items:center; text-align:center;">
-                              <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                                <div style="font-size:72px; font-family:'Times New Roman', Times, serif; text-transform:none; color:var(--cyan); font-style:italic; line-height:0.8; text-shadow: 0 0 15px rgba(63,214,255,0.8);">&beta;</div>
-                                <div style="font-size:14px; color:var(--cyan); margin-top:12px; font-weight:bold; letter-spacing:2px; text-transform:none;">(beta)</div>
+                            <div
+                              style="display:grid; grid-template-columns: 1.2fr 2.5fr; border-bottom:1px solid rgba(255,255,255,0.1); flex:1; align-items:center; text-align:center;">
+                              <div
+                                style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <div
+                                  style="font-size:72px; font-family:'Times New Roman', Times, serif; text-transform:none; color:var(--cyan); font-style:italic; line-height:0.8; text-shadow: 0 0 15px rgba(63,214,255,0.8);">
+                                  &beta;</div>
+                                <div
+                                  style="font-size:14px; color:var(--cyan); margin-top:12px; font-weight:bold; letter-spacing:2px; text-transform:none;">
+                                  (beta)</div>
                               </div>
                               <div style="height:100%; width:100%; position:relative;">
-                                <svg viewBox="15 -20 235 120" width="100%" height="100%" style="position:absolute; top:0; left:0;">
+                                <svg viewBox="15 -20 235 120" width="100%" height="100%"
+                                  style="position:absolute; top:0; left:0;">
                                   <circle cx="30" cy="50" r="7" fill="#3b82f6" />
-                                  <line x1="45" y1="50" x2="145" y2="50" stroke="#3fd6ff" stroke-width="2" marker-end="url(#arrowCyan)" />
+                                  <line x1="45" y1="50" x2="145" y2="50" stroke="#3fd6ff" stroke-width="2"
+                                    marker-end="url(#arrowCyan)" />
                                   <!-- Barrier Taller & Shifted Down -->
                                   <polygon points="160,30 165,25 165,100 160,105" fill="#94a3b8" />
                                   <polygon points="165,25 180,15 180,90 165,100" fill="#64748b" />
                                   <polygon points="160,30 175,20 180,15 165,25" fill="#cbd5e1" />
-                                  <text x="170" y="0" fill="#ffffff" font-size="22" font-weight="bold" text-anchor="middle" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">ALUMINIUM</text>
-                                  <line x1="170" y1="50" x2="225" y2="50" stroke="#3b82f6" stroke-width="1.5" opacity="0.6" />
+                                  <text x="170" y="0" fill="#ffffff" font-size="22" font-weight="bold"
+                                    text-anchor="middle"
+                                    style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">ALUMINIUM</text>
+                                  <line x1="170" y1="50" x2="225" y2="50" stroke="#3b82f6" stroke-width="1.5"
+                                    opacity="0.6" />
                                   <g transform="translate(240,50)">
                                     <circle cx="0" cy="0" r="9" fill="#ef4444" />
-                                    <path d="M -4 -4 L 4 4 M -4 4 L 4 -4" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+                                    <path d="M -4 -4 L 4 4 M -4 4 L 4 -4" stroke="#1e293b" stroke-width="3"
+                                      stroke-linecap="round" />
                                   </g>
                                 </svg>
                               </div>
                             </div>
 
                             <!-- Row 3: Gamma -->
-                            <div style="display:grid; grid-template-columns: 1.2fr 2.5fr; flex:1; align-items:center; text-align:center;">
-                              <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                                <div style="font-size:72px; font-family:'Times New Roman', Times, serif; text-transform:none; color:var(--amber); font-style:italic; line-height:0.8; text-shadow: 0 0 15px rgba(255,210,63,0.8);">&gamma;</div>
-                                <div style="font-size:14px; color:var(--amber); margin-top:12px; font-weight:bold; letter-spacing:2px; text-transform:none;">(gamma)</div>
+                            <div
+                              style="display:grid; grid-template-columns: 1.2fr 2.5fr; flex:1; align-items:center; text-align:center;">
+                              <div
+                                style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <div
+                                  style="font-size:72px; font-family:'Times New Roman', Times, serif; text-transform:none; color:var(--amber); font-style:italic; line-height:0.8; text-shadow: 0 0 15px rgba(255,210,63,0.8);">
+                                  &gamma;</div>
+                                <div
+                                  style="font-size:14px; color:var(--amber); margin-top:12px; font-weight:bold; letter-spacing:2px; text-transform:none;">
+                                  (gamma)</div>
                               </div>
                               <div style="height:100%; width:100%; position:relative;">
-                                <svg viewBox="15 -20 235 120" width="100%" height="100%" style="position:absolute; top:0; left:0;">
-                                  <path d="M 20 50 Q 30 35, 40 50 T 60 50 T 80 50 T 100 50 T 120 50 T 140 50" fill="none" stroke="#ffd23f" stroke-width="2" marker-end="url(#arrowYellow)" />
+                                <svg viewBox="15 -20 235 120" width="100%" height="100%"
+                                  style="position:absolute; top:0; left:0;">
+                                  <path d="M 20 50 Q 30 35, 40 50 T 60 50 T 80 50 T 100 50 T 120 50 T 140 50"
+                                    fill="none" stroke="#ffd23f" stroke-width="2" marker-end="url(#arrowYellow)" />
                                   <!-- Barrier Taller & Shifted Down -->
                                   <polygon points="160,35 170,25 170,105 160,115" fill="#475569" />
                                   <polygon points="170,25 195,10 195,90 170,105" fill="#334155" />
                                   <polygon points="160,35 185,20 195,10 170,25" fill="#94a3b8" />
                                   <line x1="182.5" y1="22.5" x2="182.5" y2="97.5" stroke="#1e293b" stroke-width="1" />
                                   <line x1="172.5" y1="32.5" x2="182.5" y2="22.5" stroke="#1e293b" stroke-width="1" />
-                                  <text x="175" y="0" fill="#ffffff" font-size="22" font-weight="bold" text-anchor="middle" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">TIMBAL</text>
-                                  <line x1="180" y1="50" x2="225" y2="50" stroke="#3b82f6" stroke-width="1.5" opacity="0.6" />
+                                  <text x="175" y="0" fill="#ffffff" font-size="22" font-weight="bold"
+                                    text-anchor="middle" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">TIMBAL</text>
+                                  <line x1="180" y1="50" x2="225" y2="50" stroke="#3b82f6" stroke-width="1.5"
+                                    opacity="0.6" />
                                   <g transform="translate(240,50)">
                                     <circle cx="0" cy="0" r="9" fill="#ef4444" />
-                                    <path d="M -4 -4 L 4 4 M -4 4 L 4 -4" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+                                    <path d="M -4 -4 L 4 4 M -4 4 L 4 -4" stroke="#1e293b" stroke-width="3"
+                                      stroke-linecap="round" />
                                   </g>
                                 </svg>
                               </div>
                             </div>
-                            
+
                             <svg width="0" height="0" style="position:absolute;">
                               <defs>
-                                <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6"
+                                  markerHeight="6" orient="auto-start-reverse">
                                   <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
                                 </marker>
-                                <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6"
+                                  markerHeight="6" orient="auto-start-reverse">
                                   <path d="M 0 1 L 10 5 L 0 9 z" fill="#3fd6ff" />
                                 </marker>
-                                <marker id="arrowYellow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <marker id="arrowYellow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6"
+                                  markerHeight="6" orient="auto-start-reverse">
                                   <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffd23f" />
                                 </marker>
                               </defs>
@@ -4118,22 +4207,28 @@
 
                         <!-- KOLOM KANAN -->
                         <div class="t-col-kanan">
-                          <div class="t-placeholder-hud" style="height:100%; padding:2em; background:rgba(0,0,0,0.2); border:1px solid rgba(63,214,255,0.2); border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3em;">
-                            
-                            <div style="color:var(--cyan); font-weight:bold; font-size:24px; text-shadow: 0 0 12px rgba(63,214,255,0.6); letter-spacing:1px;">
+                          <div class="t-placeholder-hud"
+                            style="height:100%; padding:2em; background:rgba(0,0,0,0.2); border:1px solid rgba(63,214,255,0.2); border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3em;">
+
+                            <div
+                              style="color:var(--cyan); font-weight:bold; font-size:24px; text-shadow: 0 0 12px rgba(63,214,255,0.6); letter-spacing:1px;">
                               Menghitung Mean
                             </div>
-                            
-                            <div style="display:flex; align-items:center; font-family:'Times New Roman', Times, serif; font-size:64px; color:#fff; text-shadow: 0 0 15px rgba(255,255,255,0.4);">
+
+                            <div
+                              style="display:flex; align-items:center; font-family:'Times New Roman', Times, serif; font-size:64px; color:#fff; text-shadow: 0 0 15px rgba(255,255,255,0.4);">
                               <!-- x bar -->
-                              <div style="display:inline-flex; flex-direction:column; align-items:center; margin-right:20px; margin-top:-10px;">
-                                <div style="width:32px; height:4px; background:#fff; margin-bottom:8px; border-radius:2px; box-shadow: 0 0 10px rgba(255,255,255,0.6);"></div>
+                              <div
+                                style="display:inline-flex; flex-direction:column; align-items:center; margin-right:20px; margin-top:-10px;">
+                                <div
+                                  style="width:32px; height:4px; background:#fff; margin-bottom:8px; border-radius:2px; box-shadow: 0 0 10px rgba(255,255,255,0.6);">
+                                </div>
                                 <div style="font-style:italic; line-height:0.8;">x</div>
                               </div>
-                              
+
                               <!-- equals -->
                               <div style="margin-right:20px;">=</div>
-                              
+
                               <!-- fraction -->
                               <div style="display:inline-flex; flex-direction:column; align-items:center;">
                                 <!-- numerator -->
@@ -4141,11 +4236,14 @@
                                   <div style="font-size:80px; line-height:0.75;">&Sigma;</div>
                                   <div style="display:flex; align-items:flex-end;">
                                     <div style="font-style:italic; line-height:0.8;">x</div>
-                                    <div style="font-style:italic; font-size:32px; margin-left:4px; margin-bottom:8px;">i</div>
+                                    <div style="font-style:italic; font-size:32px; margin-left:4px; margin-bottom:8px;">
+                                      i</div>
                                   </div>
                                 </div>
                                 <!-- fraction line -->
-                                <div style="width:100%; height:4px; background:#fff; margin:16px 0; border-radius:2px; box-shadow: 0 0 10px rgba(255,255,255,0.6);"></div>
+                                <div
+                                  style="width:100%; height:4px; background:#fff; margin:16px 0; border-radius:2px; box-shadow: 0 0 10px rgba(255,255,255,0.6);">
+                                </div>
                                 <!-- denominator n -->
                                 <div style="font-style:italic; line-height:0.8; padding:0 15px;">n</div>
                               </div>
@@ -4233,12 +4331,16 @@
 
                         <!-- KOLOM KANAN -->
                         <div class="t-col-kanan">
-                          <div class="t-placeholder-hud" style="height:100%; padding:0; background:rgba(0,0,0,0.2); border:1px solid rgba(63,214,255,0.2); border-radius:12px; position:relative; overflow:hidden;">
-                            
+                          <div class="t-placeholder-hud"
+                            style="height:100%; padding:0; background:rgba(0,0,0,0.2); border:1px solid rgba(63,214,255,0.2); border-radius:12px; position:relative; overflow:hidden;">
+
                             <!-- Background glow -->
-                            <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:radial-gradient(circle at center, rgba(63,214,255,0.05) 0%, transparent 70%);"></div>
-                            
-                            <svg viewBox="0 0 400 300" width="100%" height="100%" style="position:relative; z-index:2; drop-shadow: 0 4px 6px rgba(0,0,0,0.5);">
+                            <div
+                              style="position:absolute; top:0; left:0; width:100%; height:100%; background:radial-gradient(circle at center, rgba(63,214,255,0.05) 0%, transparent 70%);">
+                            </div>
+
+                            <svg viewBox="0 0 400 300" width="100%" height="100%"
+                              style="position:relative; z-index:2; drop-shadow: 0 4px 6px rgba(0,0,0,0.5);">
                               <defs>
                                 <filter id="glowCyan" x="-50%" y="-50%" width="200%" height="200%">
                                   <feGaussianBlur stdDeviation="3" result="blur" />
@@ -4261,7 +4363,8 @@
                               <!-- Decorative background HUD circles -->
                               <g transform="translate(200, 150)">
                                 <circle r="120" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-                                <circle r="90" fill="none" stroke="rgba(63,214,255,0.1)" stroke-width="1.5" stroke-dasharray="4 8" />
+                                <circle r="90" fill="none" stroke="rgba(63,214,255,0.1)" stroke-width="1.5"
+                                  stroke-dasharray="4 8" />
                                 <circle r="65" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" />
                               </g>
 
@@ -4269,28 +4372,37 @@
                               <g stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none">
                                 <!-- Top Left -->
                                 <path d="M 155 150 L 90 85 L 40 85" />
-                                <circle cx="40" cy="85" r="2.5" fill="#3fd6ff" stroke="none" filter="url(#glowCyan)"/>
+                                <circle cx="40" cy="85" r="2.5" fill="#3fd6ff" stroke="none" filter="url(#glowCyan)" />
                                 <!-- Top Right -->
                                 <path d="M 245 150 L 310 85 L 360 85" />
-                                <circle cx="360" cy="85" r="2.5" fill="#cbd5e1" stroke="none" filter="url(#glowWhite)"/>
+                                <circle cx="360" cy="85" r="2.5" fill="#cbd5e1" stroke="none"
+                                  filter="url(#glowWhite)" />
                                 <!-- Bottom Left -->
                                 <path d="M 155 150 L 90 215 L 40 215" />
-                                <circle cx="40" cy="215" r="2.5" fill="#ffd23f" stroke="none" filter="url(#glowAmber)"/>
+                                <circle cx="40" cy="215" r="2.5" fill="#ffd23f" stroke="none"
+                                  filter="url(#glowAmber)" />
                                 <!-- Bottom Right -->
                                 <path d="M 245 150 L 310 215 L 360 215" />
-                                <circle cx="360" cy="215" r="2.5" fill="#22c55e" stroke="none" filter="url(#glowGreen)"/>
+                                <circle cx="360" cy="215" r="2.5" fill="#22c55e" stroke="none"
+                                  filter="url(#glowGreen)" />
                               </g>
 
                               <!-- Orbits -->
                               <g transform="translate(200, 150)">
-                                <ellipse rx="45" ry="15" fill="none" stroke="#3fd6ff" stroke-width="1.5" opacity="0.5" transform="rotate(30)" />
-                                <ellipse rx="45" ry="15" fill="none" stroke="#3fd6ff" stroke-width="1.5" opacity="0.5" transform="rotate(90)" />
-                                <ellipse rx="45" ry="15" fill="none" stroke="#3fd6ff" stroke-width="1.5" opacity="0.5" transform="rotate(150)" />
-                                
+                                <ellipse rx="45" ry="15" fill="none" stroke="#3fd6ff" stroke-width="1.5" opacity="0.5"
+                                  transform="rotate(30)" />
+                                <ellipse rx="45" ry="15" fill="none" stroke="#3fd6ff" stroke-width="1.5" opacity="0.5"
+                                  transform="rotate(90)" />
+                                <ellipse rx="45" ry="15" fill="none" stroke="#3fd6ff" stroke-width="1.5" opacity="0.5"
+                                  transform="rotate(150)" />
+
                                 <!-- Electrons -->
-                                <circle cx="39" cy="7.5" r="3" fill="#fff" filter="url(#glowCyan)" transform="rotate(30)" />
-                                <circle cx="-39" cy="-7.5" r="3" fill="#fff" filter="url(#glowCyan)" transform="rotate(90)" />
-                                <circle cx="15" cy="-14" r="3" fill="#fff" filter="url(#glowCyan)" transform="rotate(150)" />
+                                <circle cx="39" cy="7.5" r="3" fill="#fff" filter="url(#glowCyan)"
+                                  transform="rotate(30)" />
+                                <circle cx="-39" cy="-7.5" r="3" fill="#fff" filter="url(#glowCyan)"
+                                  transform="rotate(90)" />
+                                <circle cx="15" cy="-14" r="3" fill="#fff" filter="url(#glowCyan)"
+                                  transform="rotate(150)" />
 
                                 <!-- Nucleus -->
                                 <circle cx="-5" cy="-4" r="6" fill="#ff5252" filter="url(#glowWhite)" />
@@ -4303,34 +4415,50 @@
                               <!-- Labels and Nodes -->
                               <!-- Top Left: Iodine-131 (Cyan) -->
                               <g transform="translate(90, 85)">
-                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#3fd6ff" stroke-width="2" filter="url(#glowCyan)" />
-                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif" text-anchor="middle">I</text>
-                                <rect x="-55" y="-52" width="110" height="26" rx="4" fill="rgba(63,214,255,0.15)" stroke="#3fd6ff" stroke-width="1" />
-                                <text x="0" y="-34" fill="#fff" font-size="14" font-weight="bold" font-family="sans-serif" text-anchor="middle" letter-spacing="1">MEDIS</text>
+                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#3fd6ff" stroke-width="2"
+                                  filter="url(#glowCyan)" />
+                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif"
+                                  text-anchor="middle">I</text>
+                                <rect x="-55" y="-52" width="110" height="26" rx="4" fill="rgba(63,214,255,0.15)"
+                                  stroke="#3fd6ff" stroke-width="1" />
+                                <text x="0" y="-34" fill="#fff" font-size="14" font-weight="bold"
+                                  font-family="sans-serif" text-anchor="middle" letter-spacing="1">MEDIS</text>
                               </g>
 
                               <!-- Top Right: Cobalt-60 (White/Gray) -->
                               <g transform="translate(310, 85)">
-                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#cbd5e1" stroke-width="2" filter="url(#glowWhite)" />
-                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif" text-anchor="middle">Co</text>
-                                <rect x="-55" y="-52" width="110" height="26" rx="4" fill="rgba(255,255,255,0.1)" stroke="#cbd5e1" stroke-width="1" />
-                                <text x="0" y="-34" fill="#fff" font-size="14" font-weight="bold" font-family="sans-serif" text-anchor="middle" letter-spacing="1">INDUSTRI</text>
+                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#cbd5e1" stroke-width="2"
+                                  filter="url(#glowWhite)" />
+                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif"
+                                  text-anchor="middle">Co</text>
+                                <rect x="-55" y="-52" width="110" height="26" rx="4" fill="rgba(255,255,255,0.1)"
+                                  stroke="#cbd5e1" stroke-width="1" />
+                                <text x="0" y="-34" fill="#fff" font-size="14" font-weight="bold"
+                                  font-family="sans-serif" text-anchor="middle" letter-spacing="1">INDUSTRI</text>
                               </g>
 
                               <!-- Bottom Left: Carbon-14 (Amber) -->
                               <g transform="translate(90, 215)">
-                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#ffd23f" stroke-width="2" filter="url(#glowAmber)" />
-                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif" text-anchor="middle">C</text>
-                                <rect x="-55" y="32" width="110" height="26" rx="4" fill="rgba(255,210,63,0.15)" stroke="#ffd23f" stroke-width="1" />
-                                <text x="0" y="50" fill="#fff" font-size="14" font-weight="bold" font-family="sans-serif" text-anchor="middle" letter-spacing="1">FOSIL</text>
+                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#ffd23f" stroke-width="2"
+                                  filter="url(#glowAmber)" />
+                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif"
+                                  text-anchor="middle">C</text>
+                                <rect x="-55" y="32" width="110" height="26" rx="4" fill="rgba(255,210,63,0.15)"
+                                  stroke="#ffd23f" stroke-width="1" />
+                                <text x="0" y="50" fill="#fff" font-size="14" font-weight="bold"
+                                  font-family="sans-serif" text-anchor="middle" letter-spacing="1">FOSIL</text>
                               </g>
 
                               <!-- Bottom Right: Uranium-238 (Green) -->
                               <g transform="translate(310, 215)">
-                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#22c55e" stroke-width="2" filter="url(#glowGreen)" />
-                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif" text-anchor="middle">U</text>
-                                <rect x="-55" y="32" width="110" height="26" rx="4" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1" />
-                                <text x="0" y="50" fill="#fff" font-size="14" font-weight="bold" font-family="sans-serif" text-anchor="middle" letter-spacing="1">ENERGI</text>
+                                <circle cx="0" cy="0" r="26" fill="#0f172a" stroke="#22c55e" stroke-width="2"
+                                  filter="url(#glowGreen)" />
+                                <text x="0" y="8" fill="#fff" font-size="24" font-weight="bold" font-family="sans-serif"
+                                  text-anchor="middle">U</text>
+                                <rect x="-55" y="32" width="110" height="26" rx="4" fill="rgba(34,197,94,0.15)"
+                                  stroke="#22c55e" stroke-width="1" />
+                                <text x="0" y="50" fill="#fff" font-size="14" font-weight="bold"
+                                  font-family="sans-serif" text-anchor="middle" letter-spacing="1">ENERGI</text>
                               </g>
                             </svg>
 
@@ -4720,7 +4848,7 @@
                     </div>
                     <div class="shield-status" id="shieldStatus">Shielding: <b id="shieldStatusVal">TANPA PELINDUNG</b>
                     </div>
-                    
+
                     <!-- Wrapper untuk runStatus yang masih ada (disembunyikan) -->
                     <div style="position: absolute; top: 3%; right: 3%; z-index: 10;">
                       <div class="run-status" id="runStatus" style="display: none;">SIAP</div>
@@ -4728,17 +4856,20 @@
 
                     <div class="status-badge" id="statusBadge">AMAN</div>
                     <svg id="stageSvg" viewBox="0 0 900 480" preserveAspectRatio="xMidYMid meet"></svg>
-                    
+
                     <!-- Wrapper Kanan Bawah untuk Notifikasi Speaker & Timer -->
-                    <div style="position: absolute; bottom: 3%; right: 3%; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 10; max-width: 60%;">
-                      <div style="background: rgba(8, 20, 32, .88); border: 1px solid var(--cyan-dim); border-radius: 5px; padding: .6em .8em; color: var(--cyan); font-size: 16px; display: flex; align-items: center; gap: 10px; letter-spacing: .02em; line-height: 1.3; text-align: justify;">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+                    <div
+                      style="position: absolute; bottom: 3%; right: 3%; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 10; max-width: 60%;">
+                      <div
+                        style="background: rgba(8, 20, 32, .88); border: 1px solid var(--cyan-dim); border-radius: 5px; padding: .6em .8em; color: var(--cyan); font-size: 16px; display: flex; align-items: center; gap: 10px; letter-spacing: .02em; line-height: 1.3; text-align: justify;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
                           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                           <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                         </svg>
                         <span>Musik dihilangkan, tetap aktifkan speaker untuk pengalaman praktik yang lebih baik.</span>
                       </div>
-                      
+
                       <div class="timer-readout" style="display:none; position: static;">
                         <div class="ic">&#9203;</div>
                         <div>
@@ -5502,7 +5633,7 @@
         let masterGainNode = null;
         window.isMuted = false;
         window.masterVolume = 0.4;
-        
+
         function getMasterGain(ctx) {
           if (!masterGainNode) {
             masterGainNode = ctx.createGain();
@@ -5515,7 +5646,7 @@
         function updateAudioVolume() {
           const v = window.isMuted ? 0 : window.masterVolume;
           if (masterGainNode) {
-             try { masterGainNode.gain.setValueAtTime(v, getAudioCtx().currentTime); } catch(e){}
+            try { masterGainNode.gain.setValueAtTime(v, getAudioCtx().currentTime); } catch (e) { }
           }
           if (dangerAudio) dangerAudio.volume = v;
           const bgm = document.getElementById('bgMusic');
@@ -5523,7 +5654,7 @@
           const muteBtn = document.getElementById('muteBtn');
           if (muteBtn) muteBtn.innerHTML = window.isMuted ? '&#128263;' : '&#128266;';
         }
-        
+
         setTimeout(() => {
           const muteBtn = document.getElementById('muteBtn');
           const volSlider = document.getElementById('volSlider');
@@ -6588,7 +6719,7 @@
             alert('Lakukan minimal 5 percobaan simulasi terlebih dahulu.');
             return;
           }
-          
+
           if (state.savedRows.some(r => r.checked)) {
             return;
           }
@@ -6610,13 +6741,13 @@
           document.body.appendChild(overlay);
 
           document.getElementById('btnTetapCek').addEventListener('click', () => {
-            if(typeof playClick === 'function') playClick();
+            if (typeof playClick === 'function') playClick();
             document.body.removeChild(overlay);
             renderLKPDTable(true);
           });
 
           document.getElementById('btnEditData').addEventListener('click', () => {
-            if(typeof playClick === 'function') playClick();
+            if (typeof playClick === 'function') playClick();
             document.body.removeChild(overlay);
           });
         });
