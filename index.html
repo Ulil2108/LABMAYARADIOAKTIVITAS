@@ -109,16 +109,19 @@
       padding-right: 4px;
     }
 
-    .col::-webkit-scrollbar {
+    .col::-webkit-scrollbar,
+    #inputPanelBody::-webkit-scrollbar {
       width: 5px;
     }
 
-    .col::-webkit-scrollbar-thumb {
+    .col::-webkit-scrollbar-thumb,
+    #inputPanelBody::-webkit-scrollbar-thumb {
       background: var(--cyan-dim);
       border-radius: 4px;
     }
 
-    .col::-webkit-scrollbar-track {
+    .col::-webkit-scrollbar-track,
+    #inputPanelBody::-webkit-scrollbar-track {
       background: rgba(0, 0, 0, 0.2);
     }
 
@@ -171,6 +174,11 @@
       display: flex;
       flex-direction: column;
       gap: .55em;
+    }
+
+    #inputPanelBody {
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     .section-label {
@@ -4772,7 +4780,7 @@
                 <div class="col">
                   <div class="panel" style="flex:1 1 auto;">
                     <div class="panel-head"><span class="dot"></span>PANEL INPUT</div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="inputPanelBody">
                       <div style="font-size:.66em;color:var(--ink-dim);">Jenis Isotop</div>
                       <div class="isotopes" id="isotopeBtns"></div>
                       <div>
